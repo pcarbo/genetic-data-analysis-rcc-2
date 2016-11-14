@@ -132,6 +132,13 @@ module load gemma
 
 ### Download the data
 
+To illustrate association analysis in a genetic data set, we will use
+the data accompanying a
+[recently published mouse genetics study](http://dx.doi.org/10.1038/ng.3609).
+(*Disclosure: I am one of the authors of the paper.*) All the data
+used to generate the results of this paper were made available on
+[Data Dryad](http://dx.doi.org/10.5061/dryad.2rs41).
+
 Copy the data files into the "data" folder in the repository. The data
 files take about 350 MB of space, so make sure you have enough space
 left over in your home directory for these files. (Run the `quota`

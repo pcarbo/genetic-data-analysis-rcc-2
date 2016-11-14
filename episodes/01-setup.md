@@ -9,8 +9,9 @@ different.
 ### Introduce yourself
 
 Introduce yourself to your neighbors. If you get stuck in any of the
-steps of this workshop, ask one your nearby peers for help before
-asking the instructor.
+steps of this workshop, ask one your peers for help before asking the
+instructor. Conversely, if you have completed the steps more quickly
+than others, consider helping your neighbors.
 
 We may use the University of Chicago
 [Google Docs](http://gdocs.uchicago.edu) to share results results and
@@ -38,7 +39,7 @@ metal contact:
 
 ![How to generate password from YubiKey](/images/yubikey2.gif)
 
-### Graphics
+### Connect to midway
 
 Log on to midway using ssh with X forwarding:
 
@@ -46,29 +47,24 @@ Log on to midway using ssh with X forwarding:
 ssh -X username@midway.rcc.uchicago.edu
 ```
 
+If the `-X` option does not work, run ssh without this option.
+
 Request an **interactive session** using the reservation for this
 workshop. To safeguard against losing your connection, I recommend
 using **screen**, but this is optional.
 
 ```bash
-screen -S workshop-gda1
-sinteractive --time=02:45:00 --mem=4G --reservation=workshop-3-nov-2016
+screen -S workshop-gda2
+sinteractive --time=02:45:00 --mem=4G --reservation=gda2_rcc_workshop
 ```
-
-*If you have volunteered to generate the PCA results, you will need to
-request 8 GB of memory instead of 4 GB.*
 
 Load the modules necessary to complete the exercises.
   
 ```bash
 module load R/3.2
 module load plink/1.90
-module load admixture
+module load gemma
 ```
-  
-*Optionally*, load [RStudio](https://rstudio.rcc.uchicago.edu) in
-your browser. The rest of workshop will assume that you are running R
-from the shell, but all the steps should work in RStudio as well.
 
 Clone this repository. (Note you don't need a github account to do
 this.)
@@ -106,6 +102,8 @@ cd ~/git/gda1/results
 cp /project/rcc/workshops/genetic-data-analysis-1/results/* .
 ```
 
+### Set up graphics
+
 Make sure that you can generate and view graphics in R using
 [ggplot2](http://ggplot2.org). First, start R,
 
@@ -113,6 +111,10 @@ Make sure that you can generate and view graphics in R using
 cd ~/git/gda1
 R --no-save
 ```
+
+*Optionally*, load [RStudio](https://rstudio.rcc.uchicago.edu) in
+your browser. The rest of workshop will assume that you are running R
+from the shell, but all the steps should work in RStudio as well.
 
 and once you have loaded the R environment, enter:
 

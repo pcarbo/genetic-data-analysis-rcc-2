@@ -61,16 +61,6 @@ screen -S workshop-gda2
 sinteractive --time=02:45:00 --mem=4G --reservation=gda2_rcc_workshop
 ```
 
-### Load modules
-
-Load the modules necessary to complete the exercises.
-  
-```bash
-module load R/3.2
-module load plink/1.90
-module load gemma
-```
-
 ### Clone git repository
 
 Clone this repository in your home directory. (Note you don't need a
@@ -89,7 +79,53 @@ If you have a github account, feel free to log in to your account and
 bookmark this repository by clicking the "Star" button at the
 top-right corner of this webpage.
 
-### Download data
+### Set up graphics
+
+As part of this workshop, we will use R to generate plots from the
+data. There are several graphics options on midway.
+
+The recommend approach is to forward graphics from midway to your
+laptop using the X Windows system. The `-X` ssh option will activate
+graphics forwarding so long as you already have the appropriate
+software installed on your laptop. For example, with Mac OS X you will
+need to download and install [XQuartz](http://www.xquartz.org).
+
+If this does not work for you, a convenient alternative is to use
+ThinLinc. The instructions for using ThinLinc are given
+[here](https://rcc.uchicago.edu/docs/connecting/index.html#connecting-with-thinlinc).
+
+A third option is to use [RStudio](https://rstudio.rcc.uchicago.edu)
+in your browser. The rest of workshop assumes that you are running R
+from the shell, but the same steps should work equally in RStudio.
+
+Before continuing, let's make sure that you can generate and view
+graphics in R using [ggplot2](http://ggplot2.org). First, start R,
+
+```bash
+cd ~/git/gda2
+module load R/3.2
+R --no-save
+```
+
+Once you entered into the R environment, run:
+
+```R
+source("code/demo.ggplot.R")
+```
+
+This should create an oscillating arrangement of multicolour dots.
+
+### Load modules
+
+Load the modules necessary to complete the exercises.
+  
+```bash
+module load R/3.2
+module load plink/1.90
+module load gemma
+```
+
+### Download the data
 
 Copy the data files into the "data" folder in the repository. The data
 files take about 350 MB of space, so make sure you have enough space
@@ -97,8 +133,8 @@ left over in your home directory for these files. (Run the `quota`
 command to check.)
 
 ```bash
-cd ~/git/gda1/data
-cp /project/rcc/workshops/genetic-data-analysis-1/data/* .
+cd ~/git/gda2/data
+cp /project/rcc/workshops/genetic-data-analysis-2/data/* .
 ```
 
 Running ADMIXTURE ([Episode 4](04-admixture.md)) may take longer than
@@ -107,33 +143,9 @@ results. Copy these results files into the results folder in the
 github repo.
 
 ```bash
-cd ~/git/gda1/results
-cp /project/rcc/workshops/genetic-data-analysis-1/results/* .
+cd ~/git/gda2/results
+cp /project/rcc/workshops/genetic-data-analysis-2/results/* .
 ```
-
-### Set up graphics
-
-Make sure that you can generate and view graphics in R using
-[ggplot2](http://ggplot2.org). First, start R,
-
-```bash
-cd ~/git/gda1
-R --no-save
-```
-
-*Optionally*, load [RStudio](https://rstudio.rcc.uchicago.edu) in
-your browser. The rest of workshop will assume that you are running R
-from the shell, but all the steps should work in RStudio as well.
-
-and once you have loaded the R environment, enter:
-
-```R
-source("code/demo.ggplot.R")
-```
-
-This should create an oscillating arrangement of multicolour dots. If
-this is not working on your computer, and alternative (for the
-*midway* cluster only) is [ThinLinc](http://rcc.uchicago.edu/docs/connecting/index.html#connecting-with-thinlinc).
 
 :white_check_mark: Once you have successfully completed all these
 steps, you are ready to move on to [Episode 2](02-pca.md).

@@ -3,19 +3,19 @@
 These instructions assume that you have a user or guest account on the
 RCC compute cluster, *midway*. If you plan to use a different
 computing resource (e.g., another compute cluster, your own laptop),
-the steps described here, and in subsequent episodes, will be slightly
-different.
+these instructions will be slightly different.
 
 ### Introduce yourself
 
-Introduce yourself to your neighbors. If you get stuck in any of the
-steps of this workshop, ask one your peers for help before asking the
-instructor. Conversely, if you have completed the steps more quickly
-than others, consider helping your neighbors.
+Introduce yourself to your neighbors. If you get stuck, ask one your
+peers for help before asking the instructor. Conversely, if you have
+completed the steps more quickly than others, consider helping your
+neighbors.
 
-We may use the University of Chicago
-[Google Docs](http://gdocs.uchicago.edu) to share results results and
-ask questions as we work through the episodes. Please open up the
+We may use the
+[University of Chicago Google Docs](http://gdocs.uchicago.edu) to
+share results results and ask questions as we work through the
+episodes. Please open up the
 [Workshop Google doc](http://tinyurl.com/h46hnm2) in your Web browser
 and **introduce yourself**.
 
@@ -23,10 +23,13 @@ and **introduce yourself**.
 
 If you do not already have a
 [user account on midway](http://rcc.uchicago.edu/getting-started/request-account),
-the instructor can provide you with a YubiKey, which will allow you to
+the instructor can provide you with a
+[YubiKey](https://www.yubico.com/start), which will allow you to
 access *midway* for the duration of the workshop. (After the workshop,
-you can request a proper user account [here](https://rcc.uchicago.edu/getting-started/general-user-account-request) provided you are
-associated with Principal Investigator who already has an account.)
+you can request a proper user account
+[here](https://rcc.uchicago.edu/getting-started/general-user-account-request)
+provided you are associated with a Principal Investigator who already
+has an RCC account.)
 
 To access *midway* with the YubiKey, your username is `rccguestXXXX`,
 where `XXXX` is the last 4 digits shown on the Yubikey:
@@ -58,6 +61,8 @@ screen -S workshop-gda2
 sinteractive --time=02:45:00 --mem=4G --reservation=gda2_rcc_workshop
 ```
 
+### Load modules
+
 Load the modules necessary to complete the exercises.
   
 ```bash
@@ -66,21 +71,25 @@ module load plink/1.90
 module load gemma
 ```
 
-Clone this repository. (Note you don't need a github account to do
-this.)
+### Clone git repository
+
+Clone this repository in your home directory. (Note you don't need a
+github account to do this.)
 
 ```bash
 mkdir -p ~/git
 cd ~/git
-git clone https://github.com/pcarbo/genetic-data-analysis-rcc-1.git gda1
+git clone https://github.com/pcarbo/genetic-data-analysis-rcc-2.git gda2
 ```
 
-After completing this step, you should have a bunch of new files and
-folders in `~/git/gda1`.
+After completing this step, you should be able to see new files and
+folders in `~/git/gda2`.
 
-If you have a github account, please log in to your account and
+If you have a github account, feel free to log in to your account and
 bookmark this repository by clicking the "Star" button at the
 top-right corner of this webpage.
+
+### Download data
 
 Copy the data files into the "data" folder in the repository. The data
 files take about 350 MB of space, so make sure you have enough space

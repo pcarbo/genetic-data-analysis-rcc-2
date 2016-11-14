@@ -1,9 +1,10 @@
 # Analysis of Genetic Data 2: Setup
 
 These instructions assume that you have a user or guest account on the
-RCC compute cluster, *midway*. If you plan to use a different
-computing resource (e.g., another compute cluster, your own laptop),
-these instructions will be slightly different.
+RCC compute cluster, [midway](https://rcc.uchicago.edu/docs). If you
+plan to use a different computing resource (e.g., another compute
+cluster, your own laptop), these instructions will be slightly
+different.
 
 ### Introduce yourself
 
@@ -81,7 +82,7 @@ top-right corner of this webpage.
 
 ### Set up graphics
 
-As part of this workshop, we will use R to generate plots from the
+As part of this workshop, we will use R to generate plots from
 data. There are several graphics options on midway.
 
 The recommend approach is to forward graphics from midway to your
@@ -90,13 +91,16 @@ graphics forwarding so long as you already have the appropriate
 software installed on your laptop. For example, with Mac OS X you will
 need to download and install [XQuartz](http://www.xquartz.org).
 
-If this does not work for you, a convenient alternative is to use
-ThinLinc. The instructions for using ThinLinc are given
+If this option does not work for you (if you are not sure if it works,
+see the next section), a convenient alternative is to use
+ThinLinc. The instructions for using ThinLinc on midway are given
 [here](https://rcc.uchicago.edu/docs/connecting/index.html#connecting-with-thinlinc).
 
 A third option is to use [RStudio](https://rstudio.rcc.uchicago.edu)
 in your browser. The rest of workshop assumes that you are running R
-from the shell, but the same steps should work equally in RStudio.
+from the shell, but the R code should work equally in RStudio.
+
+### Test your graphics setup
 
 Before continuing, let's make sure that you can generate and view
 graphics in R using [ggplot2](http://ggplot2.org). First, start R,
@@ -107,13 +111,14 @@ module load R/3.2
 R --no-save
 ```
 
-Once you entered into the R environment, run:
+Once you have entered into the R environment, run the following:
 
 ```R
 source("code/demo.ggplot.R")
 ```
 
-This should create an oscillating arrangement of multicolour dots.
+This should create an oscillating arrangement of multicolour dots. If
+you do not see this, it means your graphic setup isn't working.
 
 ### Load modules
 

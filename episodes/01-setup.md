@@ -157,4 +157,4 @@ steps, you are ready to move on to [Episode 2](02-pca.md).
 
 ### Notes
 
-These instructions are adapted from [the Setup for Part 1](https://github.com/pcarbo/genetic-data-analysis-rcc-1/blob/master/episodes/01-setup.md).
+These instructions are adapted from [the setup instructions for Part 1](https://github.com/pcarbo/genetic-data-analysis-rcc-1/blob/master/episodes/01-setup.md).

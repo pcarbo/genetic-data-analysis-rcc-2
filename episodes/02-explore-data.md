@@ -22,11 +22,16 @@ Here we will investivate how these three types of data are stored in
 compute files for this data set. We will start by taking a quick look
 at the phenotype data.
 
+:pushpin: Along with the data files, you should have downloaded an
+accompanying "readme" file describing the data files in detail. Please
+consult this file if you would like to dig deeper beyond what we have
+explored in this episode.
+
 ### A. The phenotype data
 
-The phenotype data are stored in file [pheno.csv](/data/pheno.csv).
-This is a standard way of representing a data table in a text file, in
-which rows correspond to lines of the file, and the separation between
+The phenotype data are stored in file **pheno.csv**. This is a
+standard way of representing a data table in a text file, in which
+rows correspond to lines of the file, and the separation between
 columns is demarked using commas.
 
 Glance at the phenotype data with the following commands:
@@ -76,11 +81,17 @@ wc -l pheno.csv
 The total number of samples is one less than this number because the
 table header was also counted.
 
+:pushpin: To find out more information about any of the commands we
+use in the examples, type `man <command>` in the UNIX shell. For
+example, to read more about the less command, type `man less`.
+
 ### B. The SNP data
 
 SNP data is now by far the most common type of genetic data used
-because it is relatively inexpensive to obtain (at least for many
-organisms) and a wide range of statistical methods have been developed
-to analyze SNP data.
+because it is relatively inexpensive to measure (at least for many
+organisms) genotypes for a large number of SNPs (typically hundreds of
+thousands), and a wide range of statistical methods have been
+developed to analyze SNP data.
 
-
+The information about the SNPs is contained in two files:
+[map.txt](/data/map.txt) and cfw.bim

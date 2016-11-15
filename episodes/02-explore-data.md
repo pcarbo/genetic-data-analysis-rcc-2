@@ -163,7 +163,7 @@ number of SNPs matches up with the numbers given in the pheno.csv. You
 can use the `wc` commmand to check this:
 
 ```bash
-wc -lw cfw.ped 
+wc -wl cfw.ped 
 ```
 
 The first number gives the number of lines, and the second number
@@ -175,5 +175,24 @@ a pair of letters; e.g., "A G".)
 the text genotype format (**.ped**) is compared to the binary format
 (**.bed**).
 
-*Use PLINK to get statistics about genotype data.*
+:orange_book: For the most part, we use standard UNIX tools to inspect
+and summarize the data. PLINK provides several specialized tools for
+getting a more detailed summary of the data, provided that the data
+are in a format recognized by PLINK. For example, the following
+command generates a report of the proportion of missing genotypes per
+sample and per SNP:
 
+```bash
+plink --bfile cfw --missing
+```
+
+Observe that the proportion of missing genotypes per sample is
+high---usually above 20%. This is because the genotype data was
+obtained using a technology (genotyping-by-sequencing) that is less
+expensive, but can have lower accuracy than other technologies, so
+genotypes estimated with less certainty have been removed.
+
+:white_check_mark: Now that we are a little bit more familiar with the
+data, and how they are encoded in computer files, in
+[the next episode](03-map-testis.md) we will use these data files to
+assess support for genetic associations with a measured trait.

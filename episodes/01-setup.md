@@ -172,10 +172,11 @@ wget http://datadryad.org/bitstream/handle/10255/dryad.117926/cfw.bed
 
 After retrieving all these files, you should have 8 files in the data
 folder (including the README file that was already there). We will
-examine what is contained in these files in [the next episode](02-XXX.md).
+examine what is contained in these files in
+[the next episode](02-explore-data.md).
 
 :white_check_mark: Once you have successfully completed all these
-steps, you are ready to move on to [Episode 2](02-XXX.md).
+steps, you are ready to move on to [Episode 2](02-explore-data.md).
 
 ### Notes
 

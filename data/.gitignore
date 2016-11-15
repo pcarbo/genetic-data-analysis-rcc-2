@@ -5,3 +5,6 @@ geno.txt.gz
 cfw.fam
 cfw.bim
 cfw.bed
+cfw.ped
+cfw.map
+cfw.log

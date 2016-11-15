@@ -114,13 +114,37 @@ reference is being used—in this case,
 [Genome Reference Consortium Mouse Build 38](http://www.ncbi.nlm.nih.gov/assembly/327618)
 was used).
 
-You will quickly find that using the arrows to scroll to the bottom of
-the file is . You can use the ``tail` command to quickly glance at the
-bottom o the file. And the `wc` is also useful here to find out how
-many SNPs have been genotyped:
+You will need to be very patient if you want to use the arrows to
+scroll to the bottom of the file. Alternatively, you can use the
+``tail` command to quickly glance at the bottom of the file.
+Additionally, use `wc` to count the number of SNPs in this dat set:
 
 ```bash
 wc -l cfw.bim
 ```
 
 :pencil2: Why are some SNP ids of the form rs---, and others are not?
+
+### C. The genotype data
+
+The genotypes are stored in PLINK's binary (".bed") format. For
+computer programs, this is convenient because the data can be read in
+very quickly, but it is not human readable. Fortunately, we can use
+PLINK to convert the binary format to a more human readable, but much
+less compact format:
+
+```bash
+cd ~/git/gda2/data
+plink --bfile cfw --recode --out cfw
+```
+
+This command outputs a file, **cfw.ped**, which we can now inspect by
+eye. (As a bonus, **cfw.log** provides a compact summary of the data
+set.)
+
+*pencil2* Use the `ls -l` command to calculate how many times larger
+the text genotype format (.ped) is compared to the binary format
+(.bed).
+
+*Use PLINK to get statistics about genotype data.*
+

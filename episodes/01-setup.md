@@ -6,7 +6,7 @@ plan to use a different computing resource (e.g., another compute
 cluster, your own laptop), these instructions will be slightly
 different.
 
-### Introduce yourself
+### A. Introduce yourself
 
 Introduce yourself to your neighbors. If you get stuck, ask one your
 peers for help before asking the instructor. Conversely, if you have
@@ -20,7 +20,7 @@ episodes. Please open up the
 [Workshop Google doc](http://tinyurl.com/h46hnm2) in your Web browser
 and **introduce yourself**.
 
-### Getting a midway user account
+### B. Getting a midway user account
 
 If you do not already have a
 [user account on midway](http://rcc.uchicago.edu/getting-started/request-account),
@@ -43,7 +43,7 @@ metal contact:
 
 ![How to generate password from YubiKey](/images/yubikey2.gif)
 
-### Connect to midway
+### C. Connect to midway
 
 Log on to midway using ssh with X forwarding:
 
@@ -62,7 +62,7 @@ screen -S workshop-gda2
 sinteractive --time=02:45:00 --mem=4G --reservation=gda2_rcc_workshop
 ```
 
-### Clone git repository
+### D. Clone git repository
 
 Clone this repository in your home directory. (Note you don't need a
 github account to do this.)
@@ -80,7 +80,7 @@ If you have a github account, feel free to log in to your account and
 bookmark this repository by clicking the "Star" button at the
 top-right corner of this webpage.
 
-### Set up graphics
+### E. Set up graphics
 
 As part of this workshop, we will use R to generate plots from
 data. There are several graphics options on midway.
@@ -100,7 +100,7 @@ A third option is to use [RStudio](https://rstudio.rcc.uchicago.edu)
 in your browser. The rest of workshop assumes that you are running R
 from the shell, but the R code should work equally in RStudio.
 
-### Test your graphics setup
+### F. Test your graphics setup
 
 Before continuing, let's make sure that you can generate and view
 graphics in R using [ggplot2](http://ggplot2.org). First, start R,
@@ -120,7 +120,7 @@ source("code/demo.ggplot.R")
 This should create an oscillating arrangement of multicolour dots. If
 you do not see this, it means your graphic setup isn't working.
 
-### Load modules
+### G. Load modules
 
 Load the modules necessary to complete the exercises.
   
@@ -130,7 +130,7 @@ module load plink/1.90
 module load gemma
 ```
 
-### Download the data
+### H. Download the data
 
 To illustrate association analysis in a genetic data set, we will use
 the data accompanying a
@@ -157,7 +157,7 @@ wget http://datadryad.org/bitstream/handle/10255/dryad.117926/cfw.bed
 
 After retrieving all these files, you should have 7 files in the data
 folder (including the README file that was already there). We will
-explore these data files in [the next episode](02-XXX.md).
+explore the data in these files in [the next episode](02-XXX.md).
 
 :white_check_mark: Once you have successfully completed all these
 steps, you are ready to move on to [Episode 2](02-XXX.md).

@@ -162,6 +162,7 @@ following these steps:
 ```bash
 cd ~/git/gda2/data
 wget -O readme_data.txt datadryad.org/bitstream/handle/10255/dryad.117919/README.txt
+wget http://datadryad.org/bitstream/handle/10255/dryad.117919/pheno.csv
 wget http://datadryad.org/bitstream/handle/10255/dryad.117921/map.txt
 wget http://datadryad.org/bitstream/handle/10255/dryad.117923/geno.txt.gz
 wget http://datadryad.org/bitstream/handle/10255/dryad.117924/cfw.fam
@@ -169,7 +170,7 @@ wget http://datadryad.org/bitstream/handle/10255/dryad.117925/cfw.bim
 wget http://datadryad.org/bitstream/handle/10255/dryad.117926/cfw.bed
 ```
 
-After retrieving all these files, you should have 7 files in the data
+After retrieving all these files, you should have 8 files in the data
 folder (including the README file that was already there). We will
 examine what is contained in these files in [the next episode](02-XXX.md).
 

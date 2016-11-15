@@ -1,2 +1,2 @@
-# Analysis of Genetic Data 2:<br>Viewing the results of a genome-wide association analysis
+# Analysis of Genetic Data 2:<br>Visualizing and interpreting the results of the genome-wide association analysis
 

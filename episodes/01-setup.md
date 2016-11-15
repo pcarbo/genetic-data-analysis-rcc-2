@@ -136,32 +136,33 @@ To illustrate association analysis in a genetic data set, we will use
 the data accompanying a
 [recently published mouse genetics study](http://dx.doi.org/10.1038/ng.3609).
 (*Disclosure: I am one of the authors of the paper.*) All the data
-used to generate the results of this paper were made available on
+used to generate the results of this paper are available on
 [Data Dryad](http://dx.doi.org/10.5061/dryad.2rs41).
 
-Copy the data files into the "data" folder in the repository. The data
-files take about 350 MB of space, so make sure you have enough space
-left over in your home directory for these files. (Run the `quota`
-command to check.)
+Copy the README and the phenotype and genotype data files into the
+"data" folder in the repository. The data files take about 350 MB of
+space, so make sure you have enough space left over in your home
+directory for these files. (Run the `quota` command to check.) This
+can be easily done on the cluster by following these steps:
 
 ```bash
 cd ~/git/gda2/data
-cp /project/rcc/workshops/genetic-data-analysis-2/data/* .
+wget -O readme_data.txt datadryad.org/bitstream/handle/10255/dryad.117919/README.txt
+wget http://datadryad.org/bitstream/handle/10255/dryad.117921/map.txt
+wget http://datadryad.org/bitstream/handle/10255/dryad.117923/geno.txt.gz
+wget http://datadryad.org/bitstream/handle/10255/dryad.117924/cfw.fam
+wget http://datadryad.org/bitstream/handle/10255/dryad.117925/cfw.bim
+wget http://datadryad.org/bitstream/handle/10255/dryad.117926/cfw.bed
 ```
 
-Running ADMIXTURE ([Episode 4](04-admixture.md)) may take longer than
-2 hours to complete, so we have pre-generated the ADMIXTURE
-results. Copy these results files into the results folder in the
-github repo.
-
-```bash
-cd ~/git/gda2/results
-cp /project/rcc/workshops/genetic-data-analysis-2/results/* .
-```
+After retrieving all these files, you should have 7 files in the data
+folder (including the README file that was already there). We will
+explore these data files in [the next episode](02-XXX.md).
 
 :white_check_mark: Once you have successfully completed all these
-steps, you are ready to move on to [Episode 2](02-pca.md).
+steps, you are ready to move on to [Episode 2](02-XXX.md).
 
 ### Notes
 
-These instructions are adapted from [the setup instructions for Part 1](https://github.com/pcarbo/genetic-data-analysis-rcc-1/blob/master/episodes/01-setup.md).
+These instructions are adapted from [the setup instructions for
+Part 1](https://github.com/pcarbo/genetic-data-analysis-rcc-1/blob/master/episodes/01-setup.md).

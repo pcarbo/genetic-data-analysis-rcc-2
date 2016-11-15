@@ -158,9 +158,9 @@ pair of columns after the 6th column gives the genotype at the SNP in
 the corresponding line of the **cfw.bim** file. Observe that some
 genotypes are "0 0". What do you think this means?
 
-:ledger: What we would expect that the number of samples and the
-number of SNPs matches up with the numbers given in the pheno.csv. You
-can use the `wc` commmand to check this:
+:ledger: We would expect that the number of samples and the number of
+SNPs matches up with the numbers given in other files we have viewed
+so far. You can use the `wc` commmand to check this:
 
 ```bash
 wc -wl cfw.ped 
@@ -169,7 +169,7 @@ wc -wl cfw.ped
 The first number gives the number of lines, and the second number
 gives the number of "words". How can you use these two numbers to get
 the number of SNPs? (Keep in mind that one genotype is represented by
-a pair of letters; e.g., "A G".)
+a pair of letters; e.g., "A G".) What inconsistency to you find?
 
 :pencil2: Use the `ls -l` command to calculate how many times larger
 the text genotype format (**.ped**) is compared to the binary format

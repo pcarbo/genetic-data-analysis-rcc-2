@@ -24,7 +24,7 @@ at the phenotype data.
 
 :pushpin: Along with the data files, you should have downloaded an
 accompanying "readme" file describing the data files in detail. Please
-consult this file if you would like to dig deeper beyond what we have
+consult this file if you would like to dig deeper beyond what is
 explored in this episode.
 
 ### A. The phenotype data
@@ -87,11 +87,40 @@ example, to read more about the less command, type `man less`.
 
 ### B. The SNP data
 
-SNP data is now by far the most common type of genetic data used
-because it is relatively inexpensive to measure (at least for many
-organisms) genotypes for a large number of SNPs (typically hundreds of
-thousands), and a wide range of statistical methods have been
-developed to analyze SNP data.
+SNP genotypes are now by far the most common type of genetic data
+because it is relatively inexpensive to obtain (at least for many
+organisms), and a wide range of statistical methods have been
+developed to work with SNP genotypes.
 
-The information about the SNPs is contained in two files:
-[map.txt](/data/map.txt) and cfw.bim
+The information about the SNPs is contained in two files: **map.txt**
+and **cfw.bim**. The latter is the standard file format used by
+[PLINK](http://www.cog-genomics.org/plink2). We will take a closer
+look at the data stored in this file:
+
+```bash
+cd ~/git/gda2/data
+less -S cfw.bim
+```
+
+Like the phenotype file, the data is stored in columns, except that
+the columns are separated by spaces instead of commas. Unlike the
+phenotype file, the columns do not have headers telling us what the
+data mean. Therefore, we need to consult the
+[PLINK documentation](http://www.cog-genomics.org/plink2/formats#bim).
+Based on a quick glance, it appears that the SNPs are ordered by
+chromosome number (precisely, autosomal chromosomes), and then by
+base-pair position along the chromosome (according to whatever genome
+reference is being used—in this case,
+[Genome Reference Consortium Mouse Build 38](http://www.ncbi.nlm.nih.gov/assembly/327618)
+was used).
+
+You will quickly find that using the arrows to scroll to the bottom of
+the file is . You can use the ``tail` command to quickly glance at the
+bottom o the file. And the `wc` is also useful here to find out how
+many SNPs have been genotyped:
+
+```bash
+wc -l cfw.bim
+```
+
+:pencil2: Why are some SNP ids of the form rs---, and others are not?

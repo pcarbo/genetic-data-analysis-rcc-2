@@ -127,7 +127,7 @@ wc -l cfw.bim
 
 ### C. The genotype data
 
-The genotypes are stored in PLINK's binary (".bed") format. For
+The genotypes are stored in PLINK's binary (**.bed**) format. For
 computer programs, this is convenient because the data can be read in
 very quickly, but it is not human readable. Fortunately, we can use
 PLINK to convert the binary format to a more human readable, but much
@@ -142,9 +142,38 @@ This command outputs a file, **cfw.ped**, which we can now inspect by
 eye. (As a bonus, **cfw.log** provides a compact summary of the data
 set.)
 
-*pencil2* Use the `ls -l` command to calculate how many times larger
-the text genotype format (.ped) is compared to the binary format
-(.bed).
+As we did for the phenotype and SNP data, the genotypes are now
+conveniently viewable as a raw text file:
+
+```bash
+less -S cfw.ped
+```
+
+This genotype file format is explained
+[here](http://www.cog-genomics.org/plink2/formats#ped). The
+description is a bit hard to follow, so for the purpose of this
+workshop, suffice to say that each row corresponds to a sample, and
+the second (space-delimited) column gives the sample id, and every
+pair of columns after the 6th column gives the genotype at the SNP in
+the corresponding line of the **cfw.bim** file. Observe that some
+genotypes are "0 0". What do you think this means?
+
+:ledger: What we would expect that the number of samples and the
+number of SNPs matches up with the numbers given in the pheno.csv. You
+can use the `wc` commmand to check this:
+
+```bash
+wc -lw cfw.ped 
+```
+
+The first number gives the number of lines, and the second number
+gives the number of "words". How can you use these two numbers to get
+the number of SNPs? (Keep in mind that one genotype is represented by
+a pair of letters; e.g., "A G".)
+
+:pencil2: Use the `ls -l` command to calculate how many times larger
+the text genotype format (**.ped**) is compared to the binary format
+(**.bed**).
 
 *Use PLINK to get statistics about genotype data.*
 

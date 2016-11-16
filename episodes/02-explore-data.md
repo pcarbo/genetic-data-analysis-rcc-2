@@ -73,7 +73,7 @@ categorical (e.g., yes/no).
 5. A small fraction of measurements are missing. "NA" is the
 convention in R (and in other programs) to encode a missing value.
 
-:ledger: How many rows (*i.e.,* samples) are in this table? We can
+:blue_book: How many rows (*i.e.,* samples) are in this table? We can
 easily find out using another shell command:
 
 ```bash
@@ -131,11 +131,12 @@ wc -l cfw.bim
 
 ### C. The genotype data
 
-The genotypes are stored in PLINK's binary (**.bed**) format. For
-computer programs, this is convenient because the data can be read in
-very quickly, but it is not human readable. Fortunately, we can use
-PLINK to convert the binary format to a more human readable, but much
-less compact format:
+The genotypes are stored in
+[PLINK's binary format](http://www.cog-genomics.org/plink2/formats#bed).
+For computer programs, this is convenient because the data can be read
+very quickly. The disadvantage is that it is not human readable.
+Fortunately, we can use PLINK to convert the binary format to human
+readable (but much less compact) format:
 
 ```bash
 cd ~/git/gda2/data
@@ -143,8 +144,8 @@ plink --bfile cfw --recode --out cfw
 ```
 
 This command outputs a file, **cfw.ped**, which we can now inspect by
-eye. (As a bonus, **cfw.log** provides a compact summary of the data
-set.)
+eye. (As a bonus, another outputted file, **cfw.log**, provides a
+compact summary of the data.)
 
 As we did for the phenotype and SNP data, the genotypes are now
 conveniently viewable as a raw text file:
@@ -156,18 +157,19 @@ less -S cfw.ped
 This genotype file format is explained
 [here](http://www.cog-genomics.org/plink2/formats#ped). The
 description is a bit hard to follow, so for the purpose of this
-workshop, suffice to say that each row corresponds to a sample, and
+workshop, suffice to say that each row corresponds to a sample, 
 the second (space-delimited) column gives the sample id, and every
 pair of columns after the 6th column gives the genotype at the SNP in
 the corresponding line of the **cfw.bim** file. Observe that some
 genotypes are "0 0". What do you think this means?
 
 :ledger: We would expect that the number of samples and the number of
-SNPs matches up with the numbers given in other files we have viewed
-so far. You can use the `wc` commmand to check this:
+SNPs matches up with the numbers we obtained from the other files we
+have viewed so far. Similar to before, we can use the `wc` commmand to
+check this:
 
 ```bash
-wc -wl cfw.ped 
+wc -w -l cfw.ped 
 ```
 
 The first number gives the number of lines, and the second number
@@ -175,9 +177,9 @@ gives the number of "words". How can you use these two numbers to get
 the number of SNPs? (Keep in mind that one genotype is represented by
 a pair of letters; e.g., "A G".) What inconsistency to you find?
 
-:pencil2: Use the `ls -l` command to calculate how many times larger
-the text genotype format (**.ped**) is compared to the binary format
-(**.bed**).
+:blue_book: Use the `ls -l` command to assess how efficient the binary
+representation is (**.bed**) compared to the text format calculate how
+many times larger the text genotype format (**.ped**).
 
 :blue_book: For the most part, we use standard UNIX tools to inspect
 and summarize the data. PLINK provides several specialized tools for

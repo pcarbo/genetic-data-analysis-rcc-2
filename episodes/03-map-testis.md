@@ -1,4 +1,4 @@
-># Analysis of Genetic Data 2:<br>Mapping genetic associations with testis weight—a first pass
+# Analysis of Genetic Data 2:<br>Mapping genetic associations with testis weight—a first pass
 
 Explain aim for this next episode: use PLINK to map genetic loci
 associated with testis weight. Motivate mapping genetic associations
@@ -106,12 +106,24 @@ write.table(combined.data[c("fid","id","pid","mid","sex","testisweight")],
 			col.names = FALSE)
 ```
 
-This will create a new file in the data folder. Use `less` as before
-to inspect the new file `cfw.fam` and compare against the old version
-`cfw_old.fam`.
+This will create a new file in the data folder in the same format as
+the old file, except that the "dummy" phenotype column is replaced
+with the testis weight data. Use `less` as before to inspect the new
+file `cfw.fam` and compare against the old version `cfw_old.fam`.
+
+:blue_book: You may notice that a few of the testis weights are
+missing ("NA"). How would you quickly check the number of missing
+values from the shell without having to scroll through the entire
+file?
 
 We now have all the data files we need to run the association analysis
-in PLINK.
+in PLINK. Quit R to return to the shell environment.
 
 ### B. Assessing support for genetic associations using PLINK.
 
+The `--assoc` command
+
+```bash
+cd ~/git/gda2/data
+plink --bfile cfw --assoc
+```

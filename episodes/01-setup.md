@@ -103,15 +103,22 @@ appropriate software installed on your laptop. For example, with Mac
 OS X you will need to download and install
 [XQuartz](http://www.xquartz.org) before connecting to midway.
 
+To check that you have correctly set up graphics for midway, jump to
+the next section.
+
 If this option does not work for you, a convenient alternative is to
-use ThinLinc. (If you are not sure whether it is working, see the next
-section.) The instructions for using ThinLinc on midway are given
+use ThinLinc. The instructions for using ThinLinc on midway are given
 [here](https://rcc.uchicago.edu/docs/connecting/index.html#connecting-with-thinlinc). 
 
 A third option is to use [RStudio](https://rstudio.rcc.uchicago.edu)
 in your browser. The rest of workshop assumes that you are running R
 from the shell, but the R code should work equally in RStudio. (Note
 that RStudio may not work with the RCC guest accounts.)
+
+A fourth option is to use the [R kernel](https://irkernel.github.io)
+in [Jupyter](https://jupyter.rcc.uchicago.edu). This option is less
+recommended because our installation of Jupyter is not yet officially
+supported, but this could work well for you.
 
 ### F. Test your graphics setup
 

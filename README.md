@@ -56,7 +56,9 @@ Attribution license
 
 ## Episodes
 
-*Table listing episodes goes here.*
+| Episode | Concepts |
+| --- | --- |
+| 1. [Setup](episodes/01-setup.md) | How do I set up my shell environment on *midway* for an analysis of genetic data? |
 
 ## Notes
 

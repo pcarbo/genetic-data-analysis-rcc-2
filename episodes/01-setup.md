@@ -25,7 +25,7 @@ and **introduce yourself**.
 
 If you do not already have a
 [user account on midway](http://rcc.uchicago.edu/getting-started/request-account),
-the instructor can provide you with a
+the instructor or helpers can provide you with a
 [YubiKey](https://www.yubico.com/start). This will allow you to access
 *midway* for the duration of the workshop. (After the workshop, you
 can request a proper user account
@@ -76,7 +76,16 @@ git clone https://github.com/pcarbo/genetic-data-analysis-rcc-2.git gda2
 ```
 
 After completing this step, you should be able to see new files and
-folders in `~/git/gda2`.
+folders in `~/git/gda2`. If this doesn't work, you can instead
+download a ZIP achive containing all the workshop materials:
+
+```bash
+mkdir -p ~/git
+cd ~/git
+wget https://github.com/pcarbo/genetic-data-analysis-rcc-2/archive/master.zip
+unzip master.zip
+mv genetic-data-analysis-rcc-2-master gda2
+```
 
 If you have a github account, feel free to log in to your account and
 bookmark this repository by clicking the "Star" button at the

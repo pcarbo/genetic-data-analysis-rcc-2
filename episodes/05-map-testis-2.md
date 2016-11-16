@@ -3,5 +3,5 @@
 Here we will take a closer look at the phenotype data, which will
 lead to an improved genome-wide association analysis.
 
-*Text goes here.*
+*This section is incomplete.*
 

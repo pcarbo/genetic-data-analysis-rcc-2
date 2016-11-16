@@ -178,27 +178,30 @@ the number of SNPs? (Keep in mind that one genotype is represented by
 a pair of letters; e.g., "A G".) What inconsistency to you find?
 
 :blue_book: Use the `ls -l` command to assess how efficient the binary
-representation is (**.bed**) compared to the text format calculate how
-many times larger the text genotype format (**.ped**).
+representation (**.bed**) is relative to the text format (**.ped**).
 
 :blue_book: For the most part, we use standard UNIX tools to inspect
-and summarize the data. PLINK provides several specialized tools for
-getting a more detailed summary of the data, provided that the data
-are in a format recognized by PLINK. For example, the following
-command generates a report of the proportion of missing genotypes per
-sample and per SNP:
+and summarize the data. PLINK provides several specialized tools that
+generate detailed summaries of the data provided that the data are in
+a format supported by PLINK. For example, the following command
+generates a report of the proportion of missing genotypes per sample
+and per SNP:
 
 ```bash
 plink --bfile cfw --missing
 ```
 
 Observe that the proportion of missing genotypes per sample is
-high---usually above 20%. This is because the genotype data was
-obtained using a technology (genotyping-by-sequencing) that is less
-expensive, but can have lower accuracy than other technologies, so
-genotypes estimated with less certainty have been removed.
+high—usually above 20%. This is because the genotype data in this
+study were obtained using a technology that is relatively inexpensive,
+but can come at the cost of lower accuracy. Genotypes estimated with
+less certainty have been removed, and reported as "missing".
 
-:white_check_mark: Now that we are a little bit more familiar with the
-data, and how they are encoded in computer files, in
+We did not focus on these specialized tools in this episode because it
+is important to appreciate that even very simple shell programs such
+as `wc` can be useful for inspecting genetic data files.
+
+:white_check_mark: Now that we have gained some familiarity with the
+data, and how these data are encoded in computer files, in
 [the next episode](03-map-testis.md) we will use these data files to
 assess support for genetic associations with a measured trait.

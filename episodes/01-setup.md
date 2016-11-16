@@ -141,12 +141,12 @@ Once you have completed this test, quit R:
 quit()
 ```
 
-*In later episodes, we will omit the part about quitting R, so please
-remember how to do this.*
+:pencil2: In later episodes, we will omit the part about quitting R, 
+so please remember how to do this.
 
 ### G. Load modules
 
-Load the modules necessary to complete the exercises.
+Load the modules that we will use to complete the exercises.
   
 ```bash
 module load R/3.2
@@ -159,9 +159,9 @@ module load gemma/0.95
 To illustrate association analysis in a genetic data set, we will use
 the data accompanying a
 [recently published mouse genetics study](http://dx.doi.org/10.1038/ng.3609).
-(*Disclosure: I am one of the authors on this paper.*) All the data
-used to generate the results of this paper are available on
-[Data Dryad](http://dx.doi.org/10.5061/dryad.2rs41).
+(*Disclosure: the instructor is one of the authors on this paper.*)
+Most of the data used to generate the results of this paper are
+available on [Data Dryad](http://dx.doi.org/10.5061/dryad.2rs41).
 
 Copy the README and the phenotype and genotype data files into the
 [data](data) folder in this git repository. The data files take up

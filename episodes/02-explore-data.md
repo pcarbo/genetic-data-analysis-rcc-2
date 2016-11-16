@@ -1,9 +1,9 @@
 # Analysis of Genetic Data 2:<br>Inspecting the data using UNIX command-line tools
 
-In this episode, we will use standard UNIX shell commands to explore
-the mouse genetics data. The aim is to get an initial impression of
-the data, and to appreciate how simple shell commands can be used to
-examine large-scale data.
+In this episode, we will use standard UNIX shell commands to briefly
+explore the mouse genetics data. The aim is to get an initial
+impression of the data, and to appreciate how simple shell commands
+can be used to examine large-scale data.
 
 The data set contains three types of data:
 
@@ -19,10 +19,10 @@ glucose levels that were recorded for every mouse. In this study, this
 includes measurements that were recorded to assess behavior.
 
 Here we will investivate how these three types of data are stored in
-compute files for this data set. We will start by taking a quick look
-at the phenotype data.
+computer files using standard file formats. We will start by taking a
+quick look at the phenotype data.
 
-:pushpin: Along with the data files, you should have downloaded an
+:pencil2: Along with the data files, you should have downloaded an
 accompanying "readme" file describing the data files in detail. Please
 consult this file if you would like to dig deeper beyond what is
 explored in this episode.

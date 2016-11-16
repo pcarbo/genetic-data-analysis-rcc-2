@@ -54,11 +54,11 @@ makes it much easier to read as a table:
 column -s, -t pheno.csv | less -S
 ```
 
-The column command lined up the text between the commas to make the
-data much more (human) readable.
+The column command creates a new text file in which the text between
+the commas is lined up to make the data much more readable (by a
+human).
 
-It does, however, allow us to make a few observations about the
-data:
+This view allows us to make a few observations about the data:
 
 1. The first line of the file is the table header.
 
@@ -70,11 +70,11 @@ data:
 4. Some measurements are recorded as numeric values. Others are
 categorical (e.g., yes/no).
 
-5. A small fraction of measurements are missing—"NA" is the
+5. A small fraction of measurements are missing. "NA" is the
 convention in R (and in other programs) to encode a missing value.
 
-How many rows (samples) are in this table? We can easily find out
-using another shell command:
+:ledger: How many rows (*i.e.,* samples) are in this table? We can
+easily find out using another shell command:
 
 ```bash
 wc -l pheno.csv
@@ -83,7 +83,7 @@ wc -l pheno.csv
 The total number of samples is one less than this number because the
 table header was also counted.
 
-:pushpin: To find out more information about any of the commands we
+:pencil2: To find out more information about any of the commands we
 use in the examples, type `man <command>` in the UNIX shell. For
 example, to read more about the less command, type `man less`.
 

@@ -115,11 +115,6 @@ in your browser. The rest of workshop assumes that you are running R
 from the shell, but the R code should work equally in RStudio. (Note
 that RStudio may not work with the RCC guest accounts.)
 
-A fourth option is to use the [R kernel](https://irkernel.github.io)
-in [Jupyter](https://jupyter.rcc.uchicago.edu). This option is less
-recommended because our installation of Jupyter is not yet officially
-supported, but this could work well for you.
-
 ### F. Test your graphics setup
 
 Before continuing, let's make sure that you can generate and view

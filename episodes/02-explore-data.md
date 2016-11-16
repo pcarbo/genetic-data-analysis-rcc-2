@@ -90,42 +90,44 @@ example, to read more about the less command, type `man less`.
 ### B. The SNP data
 
 SNP genotypes are now by far the most common type of genetic data
-because it is relatively inexpensive to obtain (at least for many
+generated. Thanks to recent advances in genotyping technologies, these
+data are relatively inexpensive to obtain (at least for many
 organisms), and a wide range of statistical methods have been
-developed to work with SNP genotypes.
+developed to manipulate and analyze SNP genotypes.
 
 The information about the SNPs is contained in two files: **map.txt**
 and **cfw.bim**. The latter is the standard file format used by
-[PLINK](http://www.cog-genomics.org/plink2). We will take a closer
-look at the data stored in this file:
+[PLINK](http://www.cog-genomics.org/plink2). Let's take a closer look
+at this file:
 
 ```bash
 cd ~/git/gda2/data
 less -S cfw.bim
 ```
 
-Like the phenotype file, the data is stored in columns, except that
-the columns are separated by spaces instead of commas. Unlike the
+Like the phenotype file, the data are stored in columns. Here, the
+columns are separated by spaces instead of commas. Unlike the
 phenotype file, the columns do not have headers telling us what the
 data mean. Therefore, we need to consult the
 [PLINK documentation](http://www.cog-genomics.org/plink2/formats#bim).
-Based on a quick glance, it appears that the SNPs are ordered by
-chromosome number (precisely, autosomal chromosomes), and then by
-base-pair position along the chromosome (according to whatever genome
-reference is being used—in this case,
+
+From a quick glance of this file using `less`, it seems that the
+SNPs are ordered by chromosome number (precisely, autosomal
+chromosomes), and then by base-pair position along the chromosome
+(according to whatever genome reference is being used—in this case,
 [Genome Reference Consortium Mouse Build 38](http://www.ncbi.nlm.nih.gov/assembly/327618)
 was used).
 
 You will need to be very patient if you want to use the arrows to
 scroll to the bottom of the file. Alternatively, you can use the
-``tail` command to quickly glance at the bottom of the file.
-Additionally, use `wc` to count the number of SNPs in this dat set:
+`tail` command to quickly glance at the bottom of the file.
+Additionally, use `wc` to count the number of SNPs:
 
 ```bash
 wc -l cfw.bim
 ```
 
-:pencil2: Why are some SNP ids of the form rs---, and others are not?
+:blue_book: Why are some SNP ids of the form rs---, and others are not?
 
 ### C. The genotype data
 
@@ -177,7 +179,7 @@ a pair of letters; e.g., "A G".) What inconsistency to you find?
 the text genotype format (**.ped**) is compared to the binary format
 (**.bed**).
 
-:orange_book: For the most part, we use standard UNIX tools to inspect
+:blue_book: For the most part, we use standard UNIX tools to inspect
 and summarize the data. PLINK provides several specialized tools for
 getting a more detailed summary of the data, provided that the data
 are in a format recognized by PLINK. For example, the following

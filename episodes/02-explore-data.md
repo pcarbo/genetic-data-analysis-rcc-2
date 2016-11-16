@@ -23,18 +23,19 @@ computer files using standard file formats. We will start by taking a
 quick look at the phenotype data.
 
 :pencil2: Along with the data files, you should have downloaded an
-accompanying "readme" file describing the data files in detail. Please
-consult this file if you would like to dig deeper beyond what is
-explored in this episode.
+accompanying "readme" file describing the data files in detail.
+Consult this file if you would like to learn more about the
+data set.
 
 ### A. The phenotype data
 
 The phenotype data are stored in file **pheno.csv**. This is a
 standard way of representing a data table in a text file, in which
-rows correspond to lines of the file, and the separation between
-columns is demarked using commas.
+rows correspond to lines of the file, and commas are used to define
+the columns.
 
-Glance at the phenotype data with the following commands:
+Glance at the phenotype data by entering the following commands in the
+shell:
 
 ```bash
 cd ~/git/gda2/data
@@ -44,25 +45,10 @@ less -S pheno.csv
 You can use the arrows to move to different rows and columns of the
 table.
 
-This command shows us the "raw" text, which is not a particularly nice
-way to view a table. It does, however, allow us to make a few
-observations about the data:
-
-+ The first line of the file gives the column header.
-
-+ A sample id is given in the first table column.
-
-+ Each line after the first gives us a long list of measurements
-("phenotype values") for one mouse.
-
-+ Some measurements are recorded as numeric values, while others are
-categorical (e.g., yes/no).
-
-+ A small fraction of measurements are missing—"NA" is the
-convention in R (and in other programs) to encode a missing value.
-
-Using the `column` command, combined with `less`, we can view this
-file in a way that makes it much easier to read as a table:
+This command shows us the "raw" text. This is not a nice way to view a
+table, but at least gives us an initial impression. Using the `column`
+command, combined with `less`, we can view this file in a way that
+makes it much easier to read as a table:
 
 ```bash
 column -s, -t pheno.csv | less -S
@@ -70,6 +56,22 @@ column -s, -t pheno.csv | less -S
 
 The column command lined up the text between the commas to make the
 data much more (human) readable.
+
+It does, however, allow us to make a few observations about the
+data:
+
+1. The first line of the file is the table header.
+
+2. The sample id is given in the first (left-most) column of the table.
+
+3. Each line after the first gives us a long list of measurements
+("phenotype values") for one mouse.
+
+4. Some measurements are recorded as numeric values. Others are
+categorical (e.g., yes/no).
+
+5. A small fraction of measurements are missing—"NA" is the
+convention in R (and in other programs) to encode a missing value.
 
 How many rows (samples) are in this table? We can easily find out
 using another shell command:

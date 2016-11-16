@@ -135,7 +135,8 @@ source("code/demo.ggplot.R")
 This should create an oscillating arrangement of multicolour dots. If
 you do not see this, it means your graphic setup isn't working.
 
-Once you have completed this test, quit R:
+Once you have completed this test, quit R and return to the shell
+environment:
 
 ```R
 quit()

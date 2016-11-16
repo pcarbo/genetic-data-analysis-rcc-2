@@ -121,9 +121,33 @@ in PLINK. Quit R to return to the shell environment.
 
 ### B. Assessing support for genetic associations using PLINK.
 
-The `--assoc` command
+The
+[--assoc function](http://www.cog-genomics.org/plink2/assoc#qassoc) in
+PLINK fits a simple linear regression for each SNP, and computes test
+statistics:
 
 ```bash
-cd ~/git/gda2/data
-plink --bfile cfw --assoc
+cd ~/git/gda2
+plink --bfile data/cfw --assoc --out results/plink
 ```
+
+Notice how quickly the analysis is completed! This command generates
+two files in the results folder: file **plink.log**, which summarizes
+the association analysis; and **plink.qassoc**, a text file containing
+test statistics computed for each SNP. You can use `wc` to check that
+the number of lines in this file equals the number of SNPs.
+
+Use `less -S` to examine this file. The last column of this file is
+usually the one that researchers are most interested in; it is the
+*p*-value calculated under the Wald test, in which values indicate
+greater evidence for an association with the phenotype. See
+[the PLINK documentation](http://www.cog-genomics.org/plink2/formats#qassoc)
+for a more detailed explanation of the results contained in this file.
+
+:white_check_mark: We have successfully completed the genome-wide
+association analysis for testis weight, but it is difficult to make
+sense of the results by visual inspection. So in
+[the next episode](04-plot-genomewide-scan.md) we will generate an
+evocative visual summary of the results using the
+[R/qtl](http://www.rqtl.org) package.
+

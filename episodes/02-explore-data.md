@@ -205,3 +205,6 @@ as `wc` can be useful for inspecting genetic data files.
 data, and how these data are encoded in computer files, in
 [the next episode](03-map-testis.md) we will use these data files to
 assess support for genetic associations with a measured trait.
+
+### Notes
+

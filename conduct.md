@@ -1,4 +1,4 @@
-## Analysis of Genetic Data, Part 1: Code of Conduct
+## Analysis of Genetic Data, Part 2: Code of Conduct
 
 As contributors and maintainers of this project, we pledge to respect
 all people who contribute through reporting issues, posting feature

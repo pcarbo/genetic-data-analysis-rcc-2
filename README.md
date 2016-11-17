@@ -71,7 +71,7 @@ data processing and analysis.
 | Episode | Concepts |
 | --- | --- |
 | 1. [Setup](episodes/01-setup.md) | How do I set up my shell environment on *midway* for an analysis of genetic data? |
-| 2. [Inspecting the data](episodes/02-explore-data.md) | How are genetic data commonly represented in compute files?<br>How can I use standard shell commands to explore and summarize genetic data? |
+| 2. [Inspecting the data](episodes/02-explore-data.md) | How are genetic data commonly represented in computer files?<br>How can I use standard shell commands to explore and summarize genetic data? |
 | 3. [Mapping genetic associations](episodes/03-map-testis.md) | *Description goes here.* |
 | 4. [Visualizing and interpreting the association analysis](episodes/04-plot-genomewide-scan.md) | *Description goes here.* |
 | 5. [Refining the association analysis](episodes/05-map-testis-2.md) | *Description goes here.* |

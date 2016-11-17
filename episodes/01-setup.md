@@ -152,7 +152,6 @@ Load the modules that we will use to complete the exercises.
 ```bash
 module load R/3.2
 module load plink/1.90
-module load gemma/0.95
 ```
 
 ### H. Download the data

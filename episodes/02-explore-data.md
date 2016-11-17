@@ -1,8 +1,9 @@
 # Analysis of Genetic Data 2:<br>Inspecting the data using UNIX command-line tools
 
 In this episode, we will use standard UNIX shell commands to briefly
-explore the mouse genetics data. The aim is to get an initial
-impression of the data, and to appreciate how simple shell commands
+explore [the data from a mouse genetics
+study](http://dx.doi.org/10.5061/dryad.2rs41). The aim is to get an initial
+impression of the data, and to appreciate how standard shell commands
 can be used to examine large-scale data.
 
 The data set contains three types of data:
@@ -11,8 +12,8 @@ The data set contains three types of data:
 polymorphisms (SNPs) that we have genotyped, such as their database
 id, and on which chromosome they are found.
 
-2. **The genotype data**: A large file storing the genotype sampled
-for every sample, and for every SNP.
+2. **The genotype data**: A large file storing the genotype for every
+sample and for every SNP.
 
 3. **The phenotype data**: Measurements such as body weight and
 glucose levels that were recorded for every mouse. In this study, this
@@ -208,3 +209,21 @@ assess support for genetic associations with a measured trait.
 
 ### Notes
 
+In this episode, we inspected the genotype data encoded in the file
+format used by the software PLINK. For an alternative (numeric)
+representation of the genotype data, see the `geno.txt.gz` file. A
+description of this file is given in the readme file you downloaded
+from the Data Dryad repository. Since this file has been compressed
+using Gzip, you can inspect this file in the shell, as we have done
+before, with the following one-liner:
+
+```bash
+zcat ~/git/gda2/data/geno.txt.gz | less -S
+```
+
+One benefit of this numeric representation for this particular data
+set is that it can capture uncertainty in the genotypes; For example,
+if is unclear whether the genotype is a 1 or 2, we can store the
+expected genotype; that is, a number somewhere between 1
+and 2. Another benefit is that it is a very compact representation
+compared to the PLINK text file (.ped).

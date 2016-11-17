@@ -1,6 +1,9 @@
 # Analysis of Genetic Data 2:<br>Visualizing and interpreting the results of the genome-wide association analysis
 
-Describe aim of Episode 4.
+In this episode we will use R, and specifically the R/qtl package, to
+visually summarize the PLINK results. Then we will cross-reference
+these results against genetic databases to understand the biological
+implications of the genetic associations.
 
 ### A. Loading the results of the PLINK association analysis
 

@@ -15,10 +15,11 @@ cd ~/git/gda2/results
 cat plink.qassoc | tr --squeeze-repeats " " > plink_new.qassoc
 ```
 
-Now that we have had some
-practice using `read.table` to read tables or spreadsheets from text
-files, this step should be a little easier this time around. First,
-open up R:
+We now have a new PLINK results file that is more easily read into R.
+
+Now that we have had some practice using `read.table` to read tables
+or spreadsheets from text files, this step should be a little easier
+this time around. First, open up R:
 
 ```bash
 cd ~/git/gda2
@@ -30,27 +31,31 @@ Then enter the following:
 ```R
 plink <- read.table(file        = "results/plink_new.qassoc",
                     sep         = " ",
-                    header      = TRUE,
-					strip.white = TRUE)
+                    header      = TRUE)
 plink <- plink[2:10]					
 print(head(plink))
 ```
 
-Since there are leading and trailing spaces on each line, the
-`read.table` function interpreted those as columns with no data, so I
-included the second statement to remove these two columns. Now the
-first column should be the chromosome number (**CHR**) and the last
-column should be the *p*-value (**P**).
+Note that `read.table` doesn't handle leading and trailing spaces very
+well; since there are leading and trailing spaces on each line, the
+`read.table` function interpreted those as columns with no data. To
+get rid of these empty columns, I included the second statement to
+remove these two columns. Now the first column should be the
+chromosome number ("CHR") and the last column should be the *p*-value
+("P").
 
 ### B. Summarizing the genome-wide association results using R/qtl
 
 The [R/qtl](http://rqtl.org) package has many features for association
-analysis that we will not explore in this workshop; here we will only
-use the powerful plotting functions.
+analysis and other analyses of genetic data that we will not explore
+in this workshop; here we will only use some of the powerful plotting
+tools.
 
 With the PLINK results now loaded into our R session, we will modify
 this table so that it is in the exact same format as the output from
-`scanone`, the R/qtl function for mapping associations:
+function `scanone`, which is the R/qtl function for mapping
+associations. Once it it in the same format as a "scanone" output, we
+can use R/qtl's functions for plotting.
 
 ```R
 library(qtl)

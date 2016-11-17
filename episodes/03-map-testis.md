@@ -1,16 +1,21 @@
 # Analysis of Genetic Data 2:<br>Mapping genetic associations with testis weight—a first pass
 
-Explain aim for this next episode: use PLINK to map genetic loci
-associated with testis weight. Motivate mapping genetic associations
-for testis weight. Most of the work is getting the data in the right
-format for the analysis with PLINK.
+In this episode, we will use PLINK to map genetic loci associated with
+a phenotype. More precisely, we will use PLINK to assess support for
+phenotype-genotype associations at all of the >90,000 SNPs. We will
+measure support for association by computing *p*-values.
 
-However, we discovered a problem in the previous episode: the rows of
-the phenotype data table (**pheno.csv**) do not line up with the rows
-of the genotype data table (**cfw.ped**). In the first part of this
-episode, we will use R to package up the phenotype data in the right
-format so that we can (correctly!) run an association analysis using
-PLINK.
+We use testis weight as our example phenotype in this episode
+primarily because the strong associations will yield more immediately
+interpretable results.
+
+We will see that most of the work is getting the data in the right
+format for the analysis with PLINK. In the previous episode, we
+discovered a problem: the rows of the phenotype data table
+(**pheno.csv**) do not line up with the rows of the genotype data
+table (**cfw.ped**). In the first part of this episode, we will use R
+to prepare the phenotype data so that it is in the right format for
+(correctly!) running a PLINK association analysis.
 
 ### A. Aligning the phenotype data to the genotype data
 

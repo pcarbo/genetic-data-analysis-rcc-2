@@ -87,14 +87,16 @@ table header was also counted.
 :pencil2: To find out more information about any of the commands we
 use in the examples, type `man <command>` in the UNIX shell. For
 example, to read more about the less command, type `man less`.
+*Warning:* some of this documentation can be very detailed and
+technical!
 
 ### B. The SNP data
 
 SNP genotypes are now by far the most common type of genetic data
 generated. Thanks to recent advances in genotyping technologies, these
-data are relatively inexpensive to obtain (at least for many
-organisms), and a wide range of statistical methods have been
-developed to manipulate and analyze SNP genotypes.
+data are relatively inexpensive to obtain (at least for the best
+studied organisms such as humans), and a wide range of statistical
+methods have been developed to manipulate and analyze SNP genotypes.
 
 The information about the SNPs is contained in two files: **map.txt**
 and **cfw.bim**. The latter is the standard file format used by
@@ -120,9 +122,9 @@ chromosomes), and then by base-pair position along the chromosome
 was used).
 
 You will need to be very patient if you want to use the arrows to
-scroll to the bottom of the file. Alternatively, you can use the
-`tail` command to quickly glance at the bottom of the file.
-Additionally, use `wc` to count the number of SNPs:
+scroll through the entire file! Alternatively, you can use the `tail`
+command to quickly glance at the bottom of the file.  Additionally,
+use `wc` to count the number of SNPs:
 
 ```bash
 wc -l cfw.bim
@@ -176,7 +178,9 @@ wc -w -l cfw.ped
 The first number gives the number of lines, and the second number
 gives the number of "words". How can you use these two numbers to get
 the number of SNPs? (Keep in mind that one genotype is represented by
-a pair of letters; e.g., "A G".) What inconsistency to you find?
+a pair of letters; e.g., "A G".) **What inconsistency to you find?
+This is important for motivating the steps we take in the next
+episode.**
 
 :blue_book: Use the `ls -l` command to assess how efficient the binary
 representation (**.bed**) is relative to the text format (**.ped**).
@@ -198,9 +202,10 @@ study were obtained using a technology that is relatively inexpensive,
 but can come at the cost of lower accuracy. Genotypes estimated with
 less certainty have been removed, and reported as "missing".
 
-We did not focus on these specialized tools in this episode because it
-is important to appreciate that even very simple shell programs such
-as `wc` can be useful for inspecting genetic data files.
+*We did not focus on these specialized PLINK tools in this episode
+because it is important to appreciate that even very simple shell
+programs such as `wc` can be useful for inspecting genetic data
+files.*
 
 :white_check_mark: Now that we have gained some familiarity with the
 data, and how these data are encoded in computer files, in
@@ -209,21 +214,22 @@ assess support for genetic associations with a measured trait.
 
 ### Notes
 
-In this episode, we inspected the genotype data encoded in the file
-format used by the software PLINK. For an alternative (numeric)
-representation of the genotype data, see the `geno.txt.gz` file. A
-description of this file is given in the readme file you downloaded
-from the Data Dryad repository. Since this file has been compressed
-using Gzip, you can inspect this file in the shell, as we have done
-before, with the following one-liner:
+Here we inspected the genotype data encoded in the file format used by
+PLINK. For an alternative (numeric) representation of the genotype
+data, see the **geno.txt.gz** file. A description of this file is
+given in the readme file you downloaded from the Data Dryad
+repository. Since this file has been compressed using Gzip, you can
+inspect this file in the shell, as we have done before, with the
+following "one-liner":
 
 ```bash
 zcat ~/git/gda2/data/geno.txt.gz | less -S
 ```
 
 One benefit of this numeric representation for this particular data
-set is that it can capture uncertainty in the genotypes; For example,
-if is unclear whether the genotype is a 1 or 2, we can store the
-expected genotype; that is, a number somewhere between 1
-and 2. Another benefit is that it is a very compact representation
-compared to the PLINK text file (.ped).
+set is that it can capture uncertainty in the genotypes. For example,
+when it is unclear whether the genotype is a 1 or 2, we can store the
+*expected genotype*; that is, a number somewhere between 1 and 2.
+Another benefit is that the numeric representation is a more compact
+representation compared to the PLINK text file (.ped), although
+perhaps less human readable.

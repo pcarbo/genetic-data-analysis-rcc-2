@@ -68,24 +68,32 @@ class(plink.qtl)    <- c("scanone","data.frame")
 print(head(plink.qtl))
 ```
 
-Explain here what this does, and why we converted the p-values to the
-logarithmic scale; this is commonly done.
+The new data table has three columns: the chromosome number, the
+base-pair position on the chromosome, and the *p*-value. Here we
+applied a commonly used trick: transform the *p*-value onto the
+logarithmic scale which improves the visual summary, especially when
+some *p*-values are very small. By adding the minus sign, the smallest
+*p*-values will show up on the top of the vertical axis.
 
-One benefit is that we can use the R/qtl interface to quickly generate
-a summary of the association results:
+One immediate benefit is that we can use the R/qtl interface to
+quickly generate a summary of the association results:
 
 ```R
 print(summary(plink.qtl))
 ```
 
-*Describe the summary here.*
+This summary shows the smallest *p*-value on each chromosome, and the
+corresponding SNP.
 
 :ledger: Observe that at least one SNP on chromosome 13 has a very
- small $p$-value. What is the $p$-value?
+ small *p*-value. What is the *p*-value?
 
-This is useful for a very quick summary, but there are many things it
-doesn't tell us. R/qtl also has a plot function that is designed
-specifically for visualizing the association signal across the genome:
+This is useful for a quick summary, but there are many things it
+doesn't tell us. For example, there could be multiple SNPs on
+chromosome 13 with very small *p*-values, but this summary doesn't
+tell us how many there are. R/qtl also has a plot function that is
+designed specifically for visualizing the association signal across
+the genome:
 
 ```R
 # Optionally, create a new graphics device. Note this doesn't work
@@ -96,16 +104,17 @@ dev.new(height = 3.5,width = 12)
 # function from the 'qtl' package.
 plot(plink.qtl,incl.markers = FALSE,type = "p",cex = 0.5,pch = 20,
      col = "darkblue",xlab = "",ylab = "-log10 p-value",gap = 3e7)
-		  
 ```
 
-This provides a "big picture" view of the association
-result. Association on chromosome 13 stands out and, to a lesser
-degree, one on chromosome 5. Next we will look more closely at these
-parts of the genome to better understand the biological implications
-of these results.
+This provides a broad view of the association results. An association
+on chromosome 13 stands out and, to a lesser degree, one on
+chromosome 5. Next we will look more closely at these parts of the
+genome to better understand the biological implications of these
+results.
 
 ### C. A closer look at the association on chromosome 13
+
+
 
 ```R
 rows <- which(plink.qtl$chr == 13)
@@ -127,6 +136,14 @@ Next steps:
 
 ### Notes
 
-Typically one will also include in this plot a horizontal line
-representing the "genome-wide" significance threshold. I intentionally
-do not show this. Why? *Discuss question of significance threshold.*
+Typically one will also include in the genome-wide plot a horizontal
+line representing the "genome-wide" significance threshold. I
+intentionally do not touch on the question of significance because it
+is a complicated and ongoing discussion in the quantitative genetics
+community, and many factors could influence the final threshold. For
+this data set only, we have used a statistical method called a
+permutation test to estimate a significance threshold of 2e-6. This
+can be used as a rule of thumb *for this data set only*. How many
+regions of the genome meet this threshold for the mapping of testis
+weight?
+

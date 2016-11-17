@@ -73,5 +73,5 @@ data processing and analysis.
 | 1. [Setup](episodes/01-setup.md) | How do I set up my shell environment on *midway* for an analysis of genetic data? |
 | 2. [Inspecting the data](episodes/02-explore-data.md) | How are genetic data commonly represented in computer files?<br>How can I use standard shell commands to explore and summarize genetic data? |
 | 3. [Mapping genetic associations](episodes/03-map-testis.md) | How do I prepare genetic data for mapping associations?<br>How do I use PLINK to assess support for genetic associations? |
-| 4. [Visualizing and interpreting the association analysis](episodes/04-plot-genomewide-scan.md) | *Description goes here.* |
+| 4. [Visualizing and interpreting the association analysis](episodes/04-plot-genomewide-scan.md) | How can I use R to visualize and interpret the PLINK results?<br>How can I cross-reference these results against genetic databases to understand the biological significance of these results? |
 | 5. [Refining the association analysis](episodes/05-map-testis-2.md) | What are some factors that could invalidate an association analysis?<br>How can we use R to look for common problems in phenotype data?<br>How can we use R to manipulate data for an improved association analysis? |

@@ -11,7 +11,7 @@ Register [here](https://training.uchicago.edu/course_detail.cfm?course_id=1715).
 
 Following from [Analysis of Genetic Data
 Part 1](https://github.com/pcarbo/genetic-data-analysis-rcc-1), in this
-2-hour workshop we will use PLINK, GEMMA and R to generate interesting
+2-hour workshop we will use PLINK and R to generate interesting
 biological insights from large-scale genetic data. We will also use
 online databases such as the UCSC Genome Browser to interpret the
 output of the data analyses. Although no background in genetics is
@@ -52,13 +52,26 @@ Attribution license
 
 ## Aims
 
-*Aims go here.*
+1. Explore the application of numeric techniques for investigating
+genetic factors contributing to measurable traits.
+
+2. Understand how large-scale genetic data sets are commonly
+represented in computer files.
+
+3. Use command-line tools to manipulate genetic data, and use R to
+summarize and visualize the results of a genetic data analysis.
+
+4. Practice using the RCC shell environment (*midway*) for large-scale
+data processing and analysis.
 
 ## Episodes
 
 | Episode | Concepts |
 | --- | --- |
 | 1. [Setup](episodes/01-setup.md) | How do I set up my shell environment on *midway* for an analysis of genetic data? |
+| 2. [Inspecting the data](episodes/02-explore-data.md) | *Description goes here.* |
+| 3. [Mapping genetic associations](episodes/03-map-testis.md) | *Description goes here.* |
+| 4. [Visualizing and interpreting the association analysis](episodes/04-plot-genomewide-scan.md) | *Description goes here.* |
 
 ## Notes
 

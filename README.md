@@ -73,6 +73,3 @@ data processing and analysis.
 | 3. [Mapping genetic associations](episodes/03-map-testis.md) | *Description goes here.* |
 | 4. [Visualizing and interpreting the association analysis](episodes/04-plot-genomewide-scan.md) | *Description goes here.* |
 
-## Notes
-
-*Any notes will go here.*

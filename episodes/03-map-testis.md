@@ -19,9 +19,9 @@ to prepare the phenotype data so that it is in the right format for
 
 ### A. Aligning the phenotype data to the genotype data
 
-Many different ways to accomplish this. We will use R since learning
-to read data into R will be useful later on in this workshop. This
-will involve four steps:
+As with almost everything we do in this workshop, there are different
+ways to accomplish this. We will use R since learning to read data
+into R will be useful later on. This will involve four steps:
 
 1. Read sample information into R.
 
@@ -80,10 +80,16 @@ print(dim(pheno))
 
 Since the phenotype table is very large, here we inspect only the
 first 10 columns. We did not need to provide column names since they
-are already provided in the first line of the CSV file. Note that
-there is an alternative function `read.csv` that is specifically
-intended for reading CSV files, but we used `read.table` here to
-contrast with the previous step.
+are already given in the first line of the CSV file. Note that there
+is an alternative function `read.csv` that is specifically intended
+for reading CSV files, but we used `read.table` here for the sake of
+being consistent.
+
+We now have two tables ("data frames") in our R environment:
+
+```R
+print(ls())
+```
 
 Now that we have loaded the two tables, a single call to the `merge`
 function will align the rows, similar to a database "join"
@@ -96,7 +102,7 @@ print(dim(combined.data))
 ```
 
 The first 6 columns of this new table are the exact same as the `fam`
-table, although the columns are now a slightly different order.
+table, although the columns are now in a slightly different order.
 
 Now that we have aligned the rows of the phenotype table against the
 genotype sample ids, we are ready to write the phenotype data to a
@@ -111,15 +117,17 @@ write.table(combined.data[c("fid","id","pid","mid","sex","testisweight")],
 			col.names = FALSE)
 ```
 
-This will create a new file in the data folder in the same format as
-the old file, except that the "dummy" phenotype column is replaced
-with the testis weight data. Use `less` as before to inspect the new
-file `cfw.fam` and compare against the old version `cfw_old.fam`.
+This creates a new file in the data folder in the same format as the
+old file, except that the "dummy" phenotype column (in which all the
+phenotype values are -9) is replaced with the testis weight data.
+
+:ledger: Use `less` as before to inspect the new file `cfw.fam` and
+compare against the old version `cfw_old.fam`.
 
 :blue_book: You may notice that a few of the testis weights are
 missing ("NA"). How would you quickly check the number of missing
 values from the shell without having to scroll through the entire
-file?
+file? *Hint:* Look up the `grep` command.
 
 We now have all the data files we need to run the association analysis
 in PLINK. Quit R to return to the shell environment.
@@ -142,17 +150,20 @@ the association analysis; and **plink.qassoc**, a text file containing
 test statistics computed for each SNP. You can use `wc` to check that
 the number of lines in this file equals the number of SNPs.
 
-Use `less -S` to examine this file. The last column of this file is
-usually the one that researchers are most interested in; it is the
-*p*-value calculated under the Wald test, in which values indicate
+:ledger: Use `less -S` to examine this file. The last column of this
+file is usually the one that researchers are most interested in; it is
+the *p*-value calculated under the Wald test. Smaller values indicate
 greater evidence for an association with the phenotype. See
 [the PLINK documentation](http://www.cog-genomics.org/plink2/formats#qassoc)
 for a more detailed explanation of the results contained in this file.
 
-:white_check_mark: We have successfully completed the genome-wide
-association analysis for testis weight, but it is difficult to make
-sense of the results by visual inspection. So in
-[the next episode](04-plot-genomewide-scan.md) we will generate an
-evocative visual summary of the results using the
-[R/qtl](http://www.rqtl.org) package.
+:white_check_mark: We have successfully completed the computation for
+the genome-wide association analysis. But our work is not over yet. We
+have not generated any interseting biological insights from these
+results, and it is difficult to make sense of the results by visual
+inspection. So in [the next episode](04-plot-genomewide-scan.md) we
+will generate an evocative visual summary of the results using the
+[R/qtl](http://www.rqtl.org) package. We have also not yet taken steps
+to validate the statistical analysis; this is the subject of
+[Episode 5](05-map-testis-2.md).
 

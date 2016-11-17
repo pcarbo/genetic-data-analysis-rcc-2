@@ -75,4 +75,4 @@ data processing and analysis.
 | 3. [Mapping genetic associations](episodes/03-map-testis.md) | How do I prepare genetic data for mapping associations?<br>
 How do I use PLINK to assess support for genetic associations? |
 | 4. [Visualizing and interpreting the association analysis](episodes/04-plot-genomewide-scan.md) | *Description goes here.* |
-| 5. [Refining the association analysis](episodes/05-map-testis-2.md) | *Description goes here.* |
+| 5. [Refining the association analysis](episodes/05-map-testis-2.md) | What are some factors that could invalidate an association analysis?<br>How can we use R to look for common problems in phenotype data?<br>How can we use R to manipulate data for an improved association analysis? |

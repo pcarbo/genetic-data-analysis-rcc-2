@@ -117,25 +117,49 @@ results.
 
 ### C. A closer look at the association on chromosome 13
 
-
+Since we have only had a broad view so far, we would like to get a
+more detailed understanding of the SNPs where the association signal
+is strongest. We can use the `which` command to select rows of the
+PLINK results table, 
 
 ```R
 rows <- which(plink.qtl$chr == 13)
-plot(plink.qtl[rows,],incl.markers = FALSE,type = "p",cex = 0.5,pch = 20,
-     col = "darkblue",xlab = "",ylab = "-log10 p-value",)
 ```
+
+and then we can use the same plotting function as before to 
+
+```R
+plot(plink.qtl[rows,],incl.markers = FALSE,type = "p",cex = 0.5,
+     pch = 20,col = "darkblue",xlab = "",ylab = "-log10 p-value")
+```
+
+Let's zoom in even further by selecting only the SNPs with the
+smallest *p*-values:
 
 ```R
 rows <- which(plink.qtl$chr == 13 & plink.qtl$logp > 10)
+print(length(rows))
 print(plink.qtl[rows,])
 ```
 
-Next steps:
+:blue_book: Apply the same steps for the region on chromosome 5 with a
+strong association signal.
 
-+ Look up the region in the UCSC Genome Browser.
+### D. Finding the most promising candidate genes underlying a genetic association
 
-+ Look up information about the gene at the
+*Note: need to give a slightly more detailed explanation of these steps.*
+
++ Look up the candidate region of the chromosome in the [UCSC Genome Browser](http://genome.ucsc.edu).
+
++ Look up information about the candidate genes at the
   [NCBI site](https://www.ncbi.nlm.nih.gov/gene).
+
++ Search recent findings on these genes at
+  [Google Scholar](http://scholar.google.com).
+
+These steps may give you a preliminary sense whether any of the genes
+implicated by the association signal could be plausible candidates for
+contributing to variation in the trait.
 
 ### Notes
 

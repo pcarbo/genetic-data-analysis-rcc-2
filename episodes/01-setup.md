@@ -191,5 +191,10 @@ steps, you are ready to move on to [Episode 2](02-explore-data.md).
 
 ### Notes
 
+*to do: Add a step to this setup for showing how to save the
+environment. This is useful if you lose your graphics connection and
+have to reconnect. In fact, I should explain more generally what steps
+need to be redone when reconnecting to midway.*
+
 These instructions are adapted from [the setup instructions for
 Part 1](https://github.com/pcarbo/genetic-data-analysis-rcc-1/blob/master/episodes/01-setup.md).
